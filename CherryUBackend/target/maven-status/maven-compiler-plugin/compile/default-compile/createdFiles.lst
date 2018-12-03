@@ -1,0 +1,17 @@
+com\cosm\model\Product.class
+com\cosm\dao\SupplierDAO.class
+com\cosm\dao\UserDAO.class
+com\cosm\dao\CartDAOImpl.class
+com\cosm\model\User.class
+com\cosm\model\Category.class
+com\cosm\dao\ProductDAO.class
+com\cosm\dao\UserDAOImpl.class
+com\cosm\dao\CategoryDAOImpl.class
+com\cosm\CherryUBackend\App.class
+com\cosm\dao\ProductDAOImpl.class
+com\cosm\dao\SupplierDAOImpl.class
+com\cosm\model\Supplier.class
+com\cosm\dao\CartDAO.class
+com\cosm\dao\CategoryDAO.class
+com\cosm\model\Cart.class
+com\cosm\config\DBConfig.class

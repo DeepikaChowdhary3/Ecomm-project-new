@@ -1,0 +1,7 @@
+com\cosm\CherryUBackend\AppTest.class
+com\cosm\test\ProductDAOTestCase.class
+com\cosm\test\DemoTest.class
+com\cosm\test\CartDAOTestCase.class
+com\cosm\test\SupplierDAOTestCase.class
+com\cosm\test\UserDAOTestCase.class
+com\cosm\test\CategoryDAOTestCase.class
