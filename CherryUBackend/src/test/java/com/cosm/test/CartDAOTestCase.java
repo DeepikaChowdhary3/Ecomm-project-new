@@ -1,4 +1,4 @@
-package com.cosm.test;
+/*package com.cosm.test;
 
 import static org.junit.Assert.*;
 
@@ -80,4 +80,4 @@ public class CartDAOTestCase {
 	}
 	
 
-}
+}*/

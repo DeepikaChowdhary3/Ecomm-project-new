@@ -13,62 +13,53 @@ import com.cosm.model.Category;
 
 @Repository("categoryDAO")
 @Transactional
-public class CategoryDAOImpl implements CategoryDAO{
+public class CategoryDAOImpl implements CategoryDAO {
 
 	@Autowired
 	SessionFactory sessionFactory;
-	@Override
+
 	public boolean addCategory(Category category) {
-		try
-		{
+		try {
 			sessionFactory.getCurrentSession().save(category);
 			return true;
-		}
-		catch(Exception e)
-		{
-		return false;
+		} catch (Exception e) {
+			return false;
 		}
 	}
 
-	@Override
+	
 	public boolean removeCategory(Category category) {
-		try
-		{
+		try {
 			sessionFactory.getCurrentSession().delete(category);
 			return true;
-		}
-		catch(Exception e)
-		{
-		return false;
+		} catch (Exception e) {
+			return false;
 		}
 	}
 
 	@Override
 	public boolean updateCategory(Category category) {
-		try
-		{
+		try {
 			sessionFactory.getCurrentSession().update(category);
 			return true;
-		}
-		catch(Exception e)
-		{
-		return false;
+		} catch (Exception e) {
+			return false;
 		}
 	}
 
 	@Override
 	public List<Category> Categorieslist() {
-		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from Category");
-		List<Category> Categorieslist=query.list();
+		Session session = sessionFactory.openSession();
+		Query query = session.createQuery("from Category");
+		List<Category> Categorieslist = query.list();
 		session.close();
 		return Categorieslist;
 	}
 
 	@Override
 	public Category getCategory(int categoryId) {
-		Session session=sessionFactory.openSession();
-		Category category=session.get(Category.class, categoryId);
+		Session session = sessionFactory.openSession();
+		Category category = session.get(Category.class, categoryId);
 		session.close();
 		return category;
 	}

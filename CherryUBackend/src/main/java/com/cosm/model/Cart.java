@@ -1,4 +1,4 @@
-package com.cosm.model;
+/*package com.cosm.model;
 
 import java.util.Date;
 
@@ -100,4 +100,4 @@ public void setShippingStatus(String shippingStatus) {
 }
 
 
-}
+}*/

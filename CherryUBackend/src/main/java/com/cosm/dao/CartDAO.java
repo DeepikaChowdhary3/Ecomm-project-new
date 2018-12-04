@@ -1,4 +1,4 @@
-package com.cosm.dao;
+/*package com.cosm.dao;
 
 import java.util.List;
 
@@ -11,4 +11,4 @@ public interface CartDAO {
 	public Cart getOrderDetails(int orderId);
 	public List<Cart> listofOrders();
 	
-}
+}*/

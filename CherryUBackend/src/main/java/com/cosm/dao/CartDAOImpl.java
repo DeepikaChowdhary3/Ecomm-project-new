@@ -1,4 +1,4 @@
-package com.cosm.dao;
+/*package com.cosm.dao;
 
 import java.util.List;
 
@@ -60,4 +60,4 @@ public class CartDAOImpl implements CartDAO {
 		return listofOrders;
 	}
 
-}
+}*/
