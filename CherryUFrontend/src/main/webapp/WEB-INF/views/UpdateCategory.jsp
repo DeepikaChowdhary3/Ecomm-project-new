@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Update Category</title>
 </head>
-<body>
+<body bgcolor="#FFDAB9">
 <h3 align="center">Update Category Page</h3>
 <form  action="<c:url value="/updateCategory"/>" method="post">
 <table align="center">
