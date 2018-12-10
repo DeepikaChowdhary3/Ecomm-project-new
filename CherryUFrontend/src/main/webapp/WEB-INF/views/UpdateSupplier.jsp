@@ -1,4 +1,5 @@
 <%@include file="Header.jsp" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -6,9 +7,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Update Supplier</title>
+<title>CherryU|Update Supplier</title>
 </head>
-<body bgcolor="#FFDAB9">
+<body>
 <h3 align="center">Update Supplier Page</h3>
 <form  action="<c:url value="/updateSupplier"/>" method="post">
 <table align="center">
@@ -28,7 +29,7 @@
 <td align="center" colspan="2"><input type="submit" value="Update Supplier"></td>
 </tr>
 </table>
-</form>
 
+</form>
 </body>
 </html>

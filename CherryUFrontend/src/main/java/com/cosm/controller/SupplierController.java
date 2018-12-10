@@ -5,12 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cosm.dao.SupplierDAO;
+
 import com.cosm.model.Supplier;
 
 @Controller
@@ -57,8 +59,9 @@ public class SupplierController {
 		m.addAttribute("supplier",supplier);
 		return "UpdateSupplier";
 	}
+	
 	@RequestMapping(value="/updateSupplier",method = RequestMethod.POST)
-	public String updateCategory(@RequestParam("supplierId")int supplierId,@RequestParam("supplierName") String supplierName,
+	public String updateSupplier(@RequestParam("supplierId")int supplierId,@RequestParam("supplierName") String supplierName,
 			@RequestParam("supplierAddr") String supplierAddr,Model m)
 	{
 		Supplier supplier=new Supplier();

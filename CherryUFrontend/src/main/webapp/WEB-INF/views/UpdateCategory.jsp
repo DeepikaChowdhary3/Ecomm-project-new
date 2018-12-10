@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Update Category</title>
+<title>CherryU|Update Category</title>
 </head>
 <body bgcolor="#FFDAB9">
 <h3 align="center">Update Category Page</h3>
@@ -26,6 +26,7 @@
 <tr>
 <td align="center" colspan="2"><input type="submit" value="Update Category"></td>
 </tr>
+
 </table>
 </form>
 </body>
