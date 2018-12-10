@@ -10,7 +10,7 @@
 <body>
 
 <nav class="navbar navbar-expand-md" style="background-color:black">
- <a class="nav-link" href="#">Home</a>
+ <a class="nav-link" href="#"><span class="glyphicon glyphicon-home">Home</span></a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
        <span class="navbar-toggler-icon"></span> 
 </button>
@@ -28,13 +28,16 @@
       <li class="nav-item">
         <a class="nav-link" href="supplier">Supplier</a>
       </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="product">Product</a>
+      </li> 
     </ul>
-    <ul class="nav justify-content-end">
+    <ul class="nav navbar-nav navbar-right">
     <li class="nav-item">
-        <a class="nav-link" href="signin">Signin</a>
+        <a class="nav-link" href="signin">Signin <span class="glyphicon glyphicon-log-in"></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="signup">Signup</a>
+        <a class="nav-link" href="signup">Signup <span class="glyphicon glyphicon-user"></span></a>
       </li>
       </ul>
   </div>  

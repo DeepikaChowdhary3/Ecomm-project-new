@@ -1,4 +1,5 @@
 <%@include file="Header.jsp" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -8,31 +9,32 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<title>Supplier</title>
+<title>CherryU|Supplier</title>
 </head>
 
 <body>
-<h3 align="center">Supplier Page</h3>
+<h3 align="center"><b>Supplier Page</b></h3>
+<div class="container">
+<form:form action="addSupplier" modelAttribute="supplier" methos="post">
 
-<form  action="<c:url value="/addSupplier"/>" method="post">
 <table class="table table-light">
 <tr>
-<td>Supplier ID</td>
-<td><input type="text" id="supplierId" name="supplierId"></td>
+<th>Supplier ID</th>
+<td><form:input path="supplierId"/></td>
 </tr>
 <tr>
-<td>Supplier Name</td>
-<td><input type="text" id="supplierName" name="supplierName"></td>
+<th>Supplier Name</th>
+<td><form:input path="supplierName"/></td>
 </tr>
 <tr>
-<td>Supplier Address</td>
-<td><input type="text" id="supplierAddr" name="supplierAddr"></td>
+<th>Supplier Address</th>
+<td><form:input path="supplierAddr"/></td>
 </tr>
 <tr>
 <td align="center" colspan="2"><input type="submit" value="Add Supplier"></td>
 </tr>
 </table>
-</form>
+</form:form>
 <br>
 
 <table align="center" class="table table-dark table-hover">
@@ -55,5 +57,6 @@
 </c:forEach>
 </table>
 
+</div>
 </body>
 </html>

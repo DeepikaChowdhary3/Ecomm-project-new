@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Sign Up</title>
+<title>CherryU|Sign Up</title>
 </head>
 <body>
 <h3 align="center">Sign Up Page</h3>
