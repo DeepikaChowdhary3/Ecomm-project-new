@@ -1,3 +1,4 @@
-com\cosm\controller\CategoryController.class
 com\cosm\controller\SupplierController.class
+com\cosm\controller\ProductController.class
+com\cosm\controller\CategoryController.class
 com\cosm\controller\MainController.class
