@@ -10,13 +10,22 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <title>CherryU|Product</title>
+<style>
+body{
+background-size:cover;
+}
+h3{
+background-color:black;
+color:#FA8072;
+}
+</style>
 </head>
-<body>
+<body background="<c:url value="/resources/images/bg3.png"/>">
 <div class="container">
 <h3 align="center"><b>Product Page</b></h3>
 <br>
-<form:form action="addProduct" modelAttribute="product" methos="post">
-<table class="table table-light">
+<form:form action="addProduct" modelAttribute="product" method="post" enctype="multipart/form-data">
+<table class="table table-dark">
 <tr>
 <th>Product Name</th>
 <td><form:input path="productName"/></td>
@@ -57,7 +66,11 @@
 <tr>
 <th>Experts Rating</th>
 <td><form:radiobuttons path="rating" items="${RatingsList}" /></td>
-</tr>  	
+</tr>  
+<tr>
+<th>Product Image</th>
+<td><form:input type="file" path="pimage" /></td>
+</tr>	
 <tr>
 <td align="center" colspan="2"><input type="submit" value="Add Product"/></td>
 </tr>

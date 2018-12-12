@@ -1,5 +1,8 @@
 package com.cosm.controller;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -11,6 +14,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.cosm.dao.CategoryDAO;
 import com.cosm.dao.ProductDAO;
@@ -46,9 +51,40 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value="/addProduct",method=RequestMethod.POST)
-	public String addProductDetails(@ModelAttribute("product")Product product,Model model)
+	public String addProductDetails(@ModelAttribute("product")Product product,@RequestParam("pimage")MultipartFile prodImage,Model model)
 	{
 		productDAO.addProduct(product);
+		
+String path="C:\\chow\\CherryU\\CherryUFrontend\\src\\main\\webapp\\resources\\images\\";
+
+		path=path+String.valueOf(product.getProductId())+".jpg";
+		
+		File imageFile=new File(path);
+		
+		if(!prodImage.isEmpty())
+		{
+			try
+			{
+				byte[] buffer=prodImage.getBytes();
+				FileOutputStream fos=new FileOutputStream(imageFile);
+				BufferedOutputStream bs=new BufferedOutputStream(fos);
+				bs.write(buffer);
+				bs.close();
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				model.addAttribute("Error","Exception Occured during the Image Uploading"+e);	
+			}
+		}
+		else
+		{
+			System.out.println("error occured");
+			model.addAttribute("Error","Error Occured during the Image Uploading");
+		}
+		
+
+		
 		Product product2=new Product();
 		model.addAttribute("product", product2);
 		model.addAttribute("Categorieslist",this.getCategorieslist(categoryDAO.Categorieslist()));
@@ -118,4 +154,11 @@ public class ProductController {
 	      return RatingsList;
 	   }
 	
+	@RequestMapping(value="/viewProducts")
+	public String viewProducts(Model model)
+	{
+		List<Product> Productslist=productDAO.Productslist();
+		model.addAttribute("Productslist",Productslist);
+		return "ViewProducts";
+	}
 }
