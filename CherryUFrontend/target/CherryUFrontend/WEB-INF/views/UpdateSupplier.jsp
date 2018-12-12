@@ -11,25 +11,25 @@
 </head>
 <body>
 <h3 align="center">Update Supplier Page</h3>
-<form:form action="updateSupplier" modelAttribute="supplier" methos="post">
+<form  action="<c:url value="/updateSupplier"/>" method="post">
 <table align="center">
 <tr>
 <td>Supplier ID</td>
-<td><form:input path="supplierId" value="${supplier.supplierId}"/></td>
+<td><input type="text" id="supplierId" name="supplierId" value="${supplier.supplierId}"></td>
 </tr>
 <tr>
 <td>Supplier Name</td>
-<td><form:input path="supplierName" value="${supplier.supplierName}"/></td>
+<td><input type="text" id="supplierName" name="supplierName" value="${supplier.supplierName}"></td>
 </tr>
 <tr>
 <td>Supplier Address</td>
-<td><form:input path="supplierAddr" value="${supplier.supplierAddr}"/></td>
+<td><input type="text" id="supplierAddr" name="supplierAddr" value="${supplier.supplierAddr}"></td>
 </tr>
 <tr>
 <td align="center" colspan="2"><input type="submit" value="Update Supplier"></td>
 </tr>
 </table>
-</form:form>
 
+</form>
 </body>
 </html>

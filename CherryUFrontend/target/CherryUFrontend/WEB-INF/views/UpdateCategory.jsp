@@ -26,6 +26,7 @@
 <tr>
 <td align="center" colspan="2"><input type="submit" value="Update Category"></td>
 </tr>
+
 </table>
 </form>
 </body>

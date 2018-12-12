@@ -10,31 +10,41 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <title>CherryU|Supplier</title>
+<style>
+body{
+background-size:cover;
+}
+h3{
+background-color:black;
+color:#FA8072;
+}
+</style>
 </head>
 
-<body>
-<h3 align="center"><b>Supplier Page</b></h3>
-<div class="container">
-<form:form action="addSupplier" modelAttribute="supplier" methos="post">
+<body  background="<c:url value="/resources/images/bg11.jpg"/>">
 
-<table class="table table-light">
+<div class="container">
+<h3 align="center"><b>Supplier Page</b></h3><br>
+<form  action="<c:url value="/addSupplier"/>" method="post">
+
+<table class="table table-dark">
 <tr>
-<th>Supplier ID</th>
-<td><form:input path="supplierId"/></td>
+<td>Supplier ID</td>
+<td><input type="text" id="supplierId" name="supplierId"></td>
 </tr>
 <tr>
-<th>Supplier Name</th>
-<td><form:input path="supplierName"/></td>
+<td>Supplier Name</td>
+<td><input type="text" id="supplierName" name="supplierName"></td>
 </tr>
 <tr>
-<th>Supplier Address</th>
-<td><form:input path="supplierAddr"/></td>
+<td>Supplier Address</td>
+<td><input type="text" id="supplierAddr" name="supplierAddr"></td>
 </tr>
 <tr>
 <td align="center" colspan="2"><input type="submit" value="Add Supplier"></td>
 </tr>
 </table>
-</form:form>
+</form>
 <br>
 
 <table align="center" class="table table-dark table-hover">

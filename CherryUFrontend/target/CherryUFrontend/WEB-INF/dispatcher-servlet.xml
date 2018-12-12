@@ -15,6 +15,10 @@
 <context:component-scan base-package="com.cosm.*">
    </context:component-scan>
 
+<mvc:resources mapping="/resources/**" location="/resources/"/>
+<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="10000000"/>
+</bean>
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	 <property name="prefix">
 			<value>/WEB-INF/views/</value>
