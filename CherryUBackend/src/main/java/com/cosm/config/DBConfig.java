@@ -14,8 +14,8 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-/*import com.cosm.dao.CartDAO;
-import com.cosm.dao.CartDAOImpl;*/
+import com.cosm.dao.CartDAO;
+import com.cosm.dao.CartDAOImpl;
 import com.cosm.dao.CategoryDAO;
 import com.cosm.dao.CategoryDAOImpl;
 import com.cosm.dao.ProductDAO;
@@ -24,7 +24,7 @@ import com.cosm.dao.SupplierDAO;
 import com.cosm.dao.SupplierDAOImpl;
 import com.cosm.dao.UserDAO;
 import com.cosm.dao.UserDAOImpl;
-/*import com.cosm.model.Cart;*/
+import com.cosm.model.Cart;
 import com.cosm.model.Category;
 import com.cosm.model.Product;
 import com.cosm.model.Supplier;
@@ -60,7 +60,7 @@ public class DBConfig {
 		LocalSessionFactoryBuilder factory=new LocalSessionFactoryBuilder(getH2DataSource());
 		factory.addProperties(hibernateProp);
 		
-		/*factory.addAnnotatedClass(Cart.class);*/
+		factory.addAnnotatedClass(Cart.class);
 		
 		factory.addAnnotatedClass(Category.class);
 		factory.addAnnotatedClass(Product.class);
@@ -78,11 +78,11 @@ public class DBConfig {
 		return new HibernateTransactionManager(sessionFactory);
 	}
 	
-	/*@Autowired(required = true)
+	@Autowired(required = true)
 	@Bean(name="cartDAO")
 	public CartDAO getCartDAO() {
 		return new CartDAOImpl();
-	}*/
+	}
 	
 	@Autowired(required = true)
 	@Bean(name="categoryDAO")

@@ -1,8 +1,8 @@
-/*package com.cosm.test;
+package com.cosm.test;
 
 import static org.junit.Assert.*;
 
-import java.util.Date;
+
 import java.util.List;
 
 import org.junit.BeforeClass;
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.cosm.dao.CartDAO;
 import com.cosm.model.Cart;
-import com.cosm.model.Category;
+
 
 
 public class CartDAOTestCase {
@@ -26,58 +26,60 @@ public class CartDAOTestCase {
 		context.refresh();
 		cartDAO=(CartDAO)context.getBean("cartDAO");
 	}
-
+@Ignore
 	@Test
-	public void addOrderTest()
+	public void addOrderToCartTest()
 	{
 		Cart cart=new Cart();
-		cart.setOrderId(9001);
+		cart.setCartId(9001);
 		cart.setUserId("Deep");
-		cart.setEmailId("chowzzz@gmail.com");
-		cart.setMobileNo("+919988416655");
-		cart.setProductId(2);
+		
+		cart.setProductId(4);
 		cart.setProductName("Skinn Celeste");
-		cart.setQuantity(2);
-		cart.setPrice(520);
-		cart.setOrderDate(new Date());
-		cart.setPaymentMode("Cash on Delivery");
-		cart.setShippingAddr("Chennai,TamilNadu");
-		cart.setShippingStatus("Order Placed");
-		assertTrue("Problem in placing an order",cartDAO.addOrder(cart));
+		cart.setQuantity(1);
+		cart.setPrice(700);
+		cart.setStatus("NotPaid");
+		
+		assertTrue("Problem in placing an order in cart",cartDAO.addOrderToCart(cart));
 		
 	}
-	
+	@Ignore
 	@Test
 	public void removeOrderTest()
 	{
-		Cart cart=cartDAO.getOrderDetails(9002);
-		assertTrue("Problem in deleting the order",cartDAO.removeOrder(cart));
+		Cart cart=cartDAO.getCartDetails(9002);
+		assertTrue("Problem in deleting the order in cart",cartDAO.removeOrderFromCart(cart));
 	}
 	
+	@Ignore
+	@Test
+	public void updateOrderTest()
+	{
+		Cart cart=cartDAO.getCartDetails(9002);
+		cart.setQuantity(4);
+		assertTrue("Problem in updating the order in cart",cartDAO.updateOrderInCart(cart));
+	}
 	
+	@Ignore
 	@Test
 	public void listofOrdersTest()
 	{
-		List<Cart> listofOrders=cartDAO.listofOrders();
-		assertTrue("Problem in Listing the Orders",listofOrders.size()>0);
+		List<Cart> Cartlist=cartDAO.Cartlist("Chow");
+		assertTrue("Problem in Listing the Orders",Cartlist.size()>0);
 		
-		for(Cart cart:listofOrders)
+		for(Cart cart:Cartlist)
 		{
-			System.out.println("Order ID:"+cart.getOrderId());
+			System.out.println("Cart ID:"+cart.getCartId());
 			System.out.println("User ID:"+cart.getUserId());
-			System.out.println("User EmailId:"+cart.getEmailId());
-			System.out.println("User MobileNo:"+cart.getMobileNo());
+			System.out.println("Status: "+cart.getStatus());
 			System.out.println("Product Id:"+cart.getProductId());
 			System.out.println("Product name:"+cart.getProductName());
 			System.out.println("Quantity:"+cart.getQuantity());
 			System.out.println("Price:"+cart.getPrice());
-			System.out.println("Date of Order Placed:"+cart.getOrderDate());
-			System.out.println("Payment mode:"+cart.getPaymentMode());
-			System.out.println("Shipping Adrress:"+cart.getShippingAddr());
-			System.out.println("Shippping Status:"+cart.getShippingStatus());
+			
 		}
 	
 	}
 	
 
-}*/
+}

@@ -21,7 +21,7 @@ public class UserDAOImpl implements UserDAO{
 	public boolean addUser(User user) {
 		try
 		{
-			sessionFactory.getCurrentSession().save(user);
+			sessionFactory.getCurrentSession().saveOrUpdate(user);
 			return true;
 		}
 		catch(Exception e)

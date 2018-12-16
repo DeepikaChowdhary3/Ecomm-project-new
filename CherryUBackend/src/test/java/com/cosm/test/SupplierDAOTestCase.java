@@ -27,18 +27,18 @@ public class SupplierDAOTestCase
 		
 		supplierDAO=(SupplierDAO)context.getBean("supplierDAO");
 	}
-	
+	@Ignore
 	@Test
 	public void addSupplierTest()
 	{
 		Supplier supplier=new Supplier();
-		supplier.setSupplierId(2001);
+		supplier.setSupplierId(2005);
 		supplier.setSupplierName("GNU Exports");
 		supplier.setSupplierAddr("Mysore,Karnataka");
 		
 		assertTrue("Probem in Adding the Supplier",supplierDAO.addSupplier(supplier));
 	}
-
+@Ignore
 	@Test
 	public void updateSupplierTest()
 	{	
@@ -46,14 +46,14 @@ public class SupplierDAOTestCase
 		supplier.setSupplierAddr("Coimbatore,TamilNadu");	
 		assertTrue("Problem in Updating the Supplier",supplierDAO.updateSupplier(supplier));
 	}
-	
+	@Ignore
 	@Test
 	public void removeSupplierTest()
 	{
 		Supplier supplier=supplierDAO.getSupplier(2002);
 		assertTrue("Problem in deleting the Supplier",supplierDAO.removeSupplier(supplier));
 	}
-	
+	@Ignore
 	@Test
 	public void listSuppliersTest()
 	{

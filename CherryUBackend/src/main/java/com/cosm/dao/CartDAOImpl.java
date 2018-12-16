@@ -1,4 +1,4 @@
-/*package com.cosm.dao;
+package com.cosm.dao;
 
 import java.util.List;
 
@@ -18,10 +18,10 @@ public class CartDAOImpl implements CartDAO {
 	@Autowired
 	SessionFactory sessionFactory;
 	@Override
-	public boolean addOrder(Cart cart) {
+	public boolean addOrderToCart(Cart cart) {
 		try
 		{
-			sessionFactory.getCurrentSession().save(cart);
+			sessionFactory.getCurrentSession().saveOrUpdate(cart);
 			return true;
 		}
 		catch(Exception e)
@@ -31,7 +31,7 @@ public class CartDAOImpl implements CartDAO {
 	}
 
 	@Override
-	public boolean removeOrder(Cart cart) {
+	public boolean removeOrderFromCart(Cart cart) {
 		try
 		{
 			sessionFactory.getCurrentSession().delete(cart);
@@ -42,22 +42,35 @@ public class CartDAOImpl implements CartDAO {
 			return false;
 		}
 	}
-
+@Override
+	public boolean updateOrderInCart(Cart cart) {
+		try
+		{
+			sessionFactory.getCurrentSession().update(cart);
+			return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+	}
 	@Override
-	public Cart getOrderDetails(int orderId) {
+	public Cart getCartDetails(int cartId) {
 		Session session=sessionFactory.openSession();
-		Cart cart=session.get(Cart.class, orderId);
+		Cart cart=session.get(Cart.class,cartId);
 		session.close();
 		return cart;
 	}
 
 	@Override
-	public List<Cart> listofOrders() {
+	public List<Cart> Cartlist(String userId) {
 		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from Cart");
-		List<Cart> listofOrders=query.list();
+		Query query=session.createQuery("from Cart where userId=:uId and status=:notPaid");
+		query.setParameter("notPaid", "NotPaid");
+		query.setParameter("uId", userId);
+		List<Cart> Cartlist=query.list();
 		session.close();
-		return listofOrders;
+		return Cartlist;
 	}
 
-}*/
+}

@@ -25,7 +25,7 @@ public class CategoryDAOTestCase
 		context.refresh();
 		categoryDAO=(CategoryDAO)context.getBean("categoryDAO");
 	}
-
+@Ignore
 	@Test
 	public void addCategoryTest()
 	{
@@ -37,7 +37,7 @@ public class CategoryDAOTestCase
 		assertTrue("Probem in Adding the Category",categoryDAO.addCategory(category));
 	}
 	
-	
+	@Ignore
 	@Test
 	public void removeCategoryTest()
 	{
@@ -45,7 +45,7 @@ public class CategoryDAOTestCase
 		assertTrue("Problem in Deleting the Category",categoryDAO.removeCategory(category));
 	}
 	
-	
+	@Ignore
 	@Test
 	public void updateCategoryTest()
 	{	
@@ -54,7 +54,7 @@ public class CategoryDAOTestCase
 		assertTrue("Problem in Updating the Category",categoryDAO.updateCategory(category));
 	}
 
-	
+	@Ignore
 	@Test
 	public void listCategoriesTest()
 	{

@@ -1,6 +1,5 @@
-/*package com.cosm.model;
+package com.cosm.model;
 
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,33 +9,29 @@ import javax.persistence.Table;
 @Table
 public class Cart {
 @Id
-int orderId;
+int cartId;
 String userId;
-String emailId;
-String mobileNo;
+
+
 
 int productId;
 String productName;
 int quantity;
 int price;
-
-Date orderDate;
-String paymentMode;
-String shippingAddr;
-String shippingStatus;
+String status;
 
 
-public Date getOrderDate() {
-	return orderDate;
+public String getStatus() {
+	return status;
 }
-public void setOrderDate(Date orderDate) {
-	this.orderDate = orderDate;
+public void setStatus(String status) {
+	this.status = status;
 }
-public int getOrderId() {
-	return orderId;
+public int getCartId() {
+	return cartId;
 }
-public void setOrderId(int orderId) {
-	this.orderId = orderId;
+public void setCartId(int cartId) {
+	this.cartId = cartId;
 }
 public String getUserId() {
 	return userId;
@@ -44,18 +39,7 @@ public String getUserId() {
 public void setUserId(String userId) {
 	this.userId = userId;
 }
-public String getEmailId() {
-	return emailId;
-}
-public void setEmailId(String emailId) {
-	this.emailId = emailId;
-}
-public String getMobileNo() {
-	return mobileNo;
-}
-public void setMobileNo(String mobileNo) {
-	this.mobileNo = mobileNo;
-}
+
 public int getProductId() {
 	return productId;
 }
@@ -80,24 +64,5 @@ public int getPrice() {
 public void setPrice(int price) {
 	this.price = price;
 }
-public String getPaymentMode() {
-	return paymentMode;
-}
-public void setPaymentMode(String paymentMode) {
-	this.paymentMode = paymentMode;
-}
-public String getShippingAddr() {
-	return shippingAddr;
-}
-public void setShippingAddr(String shippingAddr) {
-	this.shippingAddr = shippingAddr;
-}
-public String getShippingStatus() {
-	return shippingStatus;
-}
-public void setShippingStatus(String shippingStatus) {
-	this.shippingStatus = shippingStatus;
-}
 
-
-}*/
+}

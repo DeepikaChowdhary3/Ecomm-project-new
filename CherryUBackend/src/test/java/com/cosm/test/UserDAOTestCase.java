@@ -23,12 +23,12 @@ public class UserDAOTestCase {
 		userDAO=(UserDAO)context.getBean("userDAO");
 		
 	}
-	
+	@Ignore
 	@Test
 	public void addUserTest() {
 		User user=new User();
 		user.setUserId("deepak");
-		user.setPassword("gamer");
+		user.setPassword("typewriter");
 		user.setEnabled(true);
 		user.setRole("Supreme_User");
 		user.setCustomerName("DeepakC");
@@ -39,16 +39,16 @@ public class UserDAOTestCase {
 		
 	}
 	
-
+@Ignore
 	@Test
 	public void updateUserTest()
 	{
-		User user=userDAO.getUser("9741522500");
+		User user=userDAO.getUser("deepak");
 		user.setAddress("Bangalore,Karnataka");
 		assertTrue("Problem in udate the user details",userDAO.updateUser(user));
 	}
 
-
+@Ignore
 	@Test
 	public void ListOfUsersTest()
 	{
