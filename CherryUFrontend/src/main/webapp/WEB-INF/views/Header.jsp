@@ -21,10 +21,10 @@ background-color:black;
 
 <nav class="navbar navbar-expand-md fixed-top">
 
-<a class="nav-link" href="#" style="color:#FA8072;font-size:18"><i class="fas fa-home">&nbsp;&nbsp;Home</i></a> 
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<a class="nav-link" href="home" style="color:#FA8072;font-size:18"><i class="fas fa-home">&nbsp;&nbsp;Home</i></a> 
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
  
 
@@ -49,6 +49,9 @@ background-color:black;
       </li> 
     </ul>
     <ul class="nav navbar-nav navbar-right">
+    <li class="nav-item">
+        <a class="nav-link" href="cart" style="color:#FA8072;font-size:18"><i class="fas fa-shopping-cart">&nbsp;&nbsp;Cart</i></a>
+      </li>
     <li class="nav-item">
         <a class="nav-link" href="signin" style="color:#FA8072;font-size:18"><i class="fas fa-sign-in-alt">&nbsp;&nbsp;SignIn</i></a>
       </li>

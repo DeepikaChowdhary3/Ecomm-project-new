@@ -25,25 +25,25 @@ background-size:cover;
 </style>
 </head>
 <body background="<c:url value="/resources/images/bg1.jpg"/>">
+<div class="container">
 <h4 align="center">
 <i><b>Products</b></i>&nbsp;&nbsp;
 <br><br>
-<i class="fas fa-heart"></i>&nbsp;&nbsp;
-<b><i>Fragrance | Make-Up </i></b>
-<i class="fas fa-heart"></i><br>
+
 </h4>
 
 <br>
-<div class="container">
+
 <div class="row text-center text-lg-left">
 <c:forEach items="${Productslist}" var="product">
     <div class="col-lg-3 col-md-4 col-6">
-      <a href="#" class="d-block mb-4 h-100">
+      <a href="chosenproduct/${product.productId}" class="d-block mb-4 h-100">
             <img class="img-fluid img-thumbnail" src="<c:url value="/resources/images/${product.productId}.jpg"/>">
-            <p align="center" style="background-color:black;color:#FA8072"><b>Product: ${product.productName} <br>
-               Price: ${product.price} <br>
+            <p align="center" style="background-color:black;color:#FA8072">
+            <b>Product: ${product.productName}<br>
+               Price: INR ${product.price} <br>
                Rating: ${product.rating}<br>
-            </b></p>
+           </b></p>
        </a>
 </div>  
  </c:forEach>

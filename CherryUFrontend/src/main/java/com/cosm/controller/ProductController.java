@@ -161,4 +161,12 @@ String path="C:\\chow\\CherryU\\CherryUFrontend\\src\\main\\webapp\\resources\\i
 		model.addAttribute("Productslist",Productslist);
 		return "ViewProducts";
 	}
+	
+	@RequestMapping(value="/chosenproduct/{productId}")
+	public String showChosenProduct(@PathVariable("productId")int productId,Model model)
+	{
+		Product product=productDAO.getProduct(productId);
+		model.addAttribute("product", product);
+		return "ChosenProduct";
+	}
 }

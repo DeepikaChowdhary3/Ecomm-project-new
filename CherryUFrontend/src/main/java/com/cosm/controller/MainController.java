@@ -21,4 +21,9 @@ public class MainController {
 	{
 		return "Aboutus";
 	}
+	@RequestMapping(value="/home")
+	public String showHome()
+	{
+		return "Home";
+	}
 }
