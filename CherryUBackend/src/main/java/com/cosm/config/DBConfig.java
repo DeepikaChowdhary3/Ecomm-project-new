@@ -35,7 +35,7 @@ import com.cosm.model.User;
 @ComponentScan("com.cosm")
 public class DBConfig {
 	
-	@Bean(name="datasource")
+	@Bean(name="dataSource")
 	public DataSource getH2DataSource()
 	{
 		DriverManagerDataSource dataSource=new DriverManagerDataSource();

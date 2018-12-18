@@ -27,7 +27,7 @@ public class UserDAOTestCase {
 	@Test
 	public void addUserTest() {
 		User user=new User();
-		user.setUserId("deepak");
+		user.setUsername("Deep");
 		user.setPassword("typewriter");
 		user.setEnabled(true);
 		user.setRole("Supreme_User");
@@ -43,7 +43,7 @@ public class UserDAOTestCase {
 	@Test
 	public void updateUserTest()
 	{
-		User user=userDAO.getUser("deepak");
+		User user=userDAO.getUser("Deep");
 		user.setAddress("Bangalore,Karnataka");
 		assertTrue("Problem in udate the user details",userDAO.updateUser(user));
 	}
@@ -58,7 +58,7 @@ public class UserDAOTestCase {
 		for(User user:listofUsers)
 		{
 			System.out.println("Customer name: "+user.getCustomerName());
-			System.out.println("User Id: "+user.getUserId());
+			System.out.println("User Id: "+user.getUsername());
 			System.out.println("Password: "+user.getPassword());
 			System.out.println("User Status: "+user.isEnabled());
 			System.out.println("Mobile Number: "+user.getMobileNo());

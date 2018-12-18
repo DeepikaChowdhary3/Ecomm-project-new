@@ -17,11 +17,12 @@ public class CartDAOImpl implements CartDAO {
 
 	@Autowired
 	SessionFactory sessionFactory;
+	
 	@Override
 	public boolean addOrderToCart(Cart cart) {
 		try
 		{
-			sessionFactory.getCurrentSession().saveOrUpdate(cart);
+			sessionFactory.getCurrentSession().save(cart);
 			return true;
 		}
 		catch(Exception e)
@@ -63,11 +64,11 @@ public class CartDAOImpl implements CartDAO {
 	}
 
 	@Override
-	public List<Cart> Cartlist(String userId) {
+	public List<Cart> Cartlist(String username) {
 		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from Cart where userId=:uId and status=:notPaid");
+		Query query=session.createQuery("from Cart where username=:uname and status=:notPaid");
 		query.setParameter("notPaid", "NotPaid");
-		query.setParameter("uId", userId);
+		query.setParameter("uname", username);
 		List<Cart> Cartlist=query.list();
 		session.close();
 		return Cartlist;

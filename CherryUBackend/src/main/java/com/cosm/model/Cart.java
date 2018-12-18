@@ -2,6 +2,7 @@ package com.cosm.model;
 
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,10 +10,11 @@ import javax.persistence.Table;
 @Table
 public class Cart {
 @Id
+@GeneratedValue
 int cartId;
-String userId;
 
 
+String username;
 
 int productId;
 String productName;
@@ -33,13 +35,14 @@ public int getCartId() {
 public void setCartId(int cartId) {
 	this.cartId = cartId;
 }
-public String getUserId() {
-	return userId;
-}
-public void setUserId(String userId) {
-	this.userId = userId;
-}
 
+
+public String getUsername() {
+	return username;
+}
+public void setUsername(String username) {
+	this.username = username;
+}
 public int getProductId() {
 	return productId;
 }

@@ -31,8 +31,8 @@ public class CartDAOTestCase {
 	public void addOrderToCartTest()
 	{
 		Cart cart=new Cart();
-		cart.setCartId(9001);
-		cart.setUserId("Deep");
+		
+		cart.setUsername("Deep");
 		
 		cart.setProductId(4);
 		cart.setProductName("Skinn Celeste");
@@ -47,7 +47,7 @@ public class CartDAOTestCase {
 	@Test
 	public void removeOrderTest()
 	{
-		Cart cart=cartDAO.getCartDetails(9002);
+		Cart cart=cartDAO.getCartDetails(9001);
 		assertTrue("Problem in deleting the order in cart",cartDAO.removeOrderFromCart(cart));
 	}
 	
@@ -55,7 +55,7 @@ public class CartDAOTestCase {
 	@Test
 	public void updateOrderTest()
 	{
-		Cart cart=cartDAO.getCartDetails(9002);
+		Cart cart=cartDAO.getCartDetails(9001);
 		cart.setQuantity(4);
 		assertTrue("Problem in updating the order in cart",cartDAO.updateOrderInCart(cart));
 	}
@@ -64,13 +64,13 @@ public class CartDAOTestCase {
 	@Test
 	public void listofOrdersTest()
 	{
-		List<Cart> Cartlist=cartDAO.Cartlist("Chow");
+		List<Cart> Cartlist=cartDAO.Cartlist("Deep");
 		assertTrue("Problem in Listing the Orders",Cartlist.size()>0);
 		
 		for(Cart cart:Cartlist)
 		{
 			System.out.println("Cart ID:"+cart.getCartId());
-			System.out.println("User ID:"+cart.getUserId());
+			System.out.println("User ID:"+cart.getUsername());
 			System.out.println("Status: "+cart.getStatus());
 			System.out.println("Product Id:"+cart.getProductId());
 			System.out.println("Product name:"+cart.getProductName());

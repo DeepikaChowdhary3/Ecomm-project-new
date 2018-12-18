@@ -54,9 +54,9 @@ public class UserDAOImpl implements UserDAO{
 	}
 
 	@Override
-	public User getUser(String mobileNo) {
+	public User getUser(String username) {
 		Session session=sessionFactory.openSession();
-		User user=session.get(User.class, mobileNo);
+		User user=session.get(User.class, username);
 		session.close();
 		return user;
 	}
