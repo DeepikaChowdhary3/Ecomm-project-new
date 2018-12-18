@@ -10,6 +10,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 <style>
+
 .navbar{
 background-color:black;
 
@@ -20,6 +21,8 @@ background-color:black;
 <body >
 
 <nav class="navbar navbar-expand-md fixed-top">
+
+<img src="<c:url value="/resources/images/logo.png"/>" style="width:50;px">
 
 <a class="nav-link" href="home" style="color:#FA8072;font-size:18"><i class="fas fa-home">&nbsp;&nbsp;Home</i></a> 
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +56,7 @@ background-color:black;
         <a class="nav-link" href="cart" style="color:#FA8072;font-size:18"><i class="fas fa-shopping-cart">&nbsp;&nbsp;Cart</i></a>
       </li>
     <li class="nav-item">
-        <a class="nav-link" href="signin" style="color:#FA8072;font-size:18"><i class="fas fa-sign-in-alt">&nbsp;&nbsp;SignIn</i></a>
+        <a class="nav-link" href="login" style="color:#FA8072;font-size:18"><i class="fas fa-sign-in-alt">&nbsp;&nbsp;Login</i></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="signup" style="color:#FA8072;font-size:18"><i class="fas fa-user">&nbsp;&nbsp;SignUp</i></a>
@@ -62,7 +65,7 @@ background-color:black;
   </div>  
 </nav>  
 
-<br><br><br>
+<br>
 
 </body>
 </html>

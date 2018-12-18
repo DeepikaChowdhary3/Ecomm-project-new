@@ -22,7 +22,7 @@ color:#FA8072;
 </head>
 
 <body  background="<c:url value="/resources/images/bg11.jpg"/>">
-
+<br><br><br>
 <div class="container">
 <h3 align="center"><b>Supplier Page</b></h3><br>
 <form  action="<c:url value="/addSupplier"/>" method="post">

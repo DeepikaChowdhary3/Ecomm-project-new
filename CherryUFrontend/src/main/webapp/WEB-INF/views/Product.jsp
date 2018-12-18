@@ -22,6 +22,7 @@ color:#FA8072;
 </style>
 </head>
 <body background="<c:url value="/resources/images/bg3.png"/>">
+<br><br><br>
 <div class="container">
 <h3 align="center"><b>Product Page</b></h3>
 <br>

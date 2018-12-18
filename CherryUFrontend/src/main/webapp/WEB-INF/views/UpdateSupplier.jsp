@@ -10,6 +10,7 @@
 <title>CherryU|Update Supplier</title>
 </head>
 <body>
+<br><br><br>
 <h3 align="center">Update Supplier Page</h3>
 <form  action="<c:url value="/updateSupplier"/>" method="post">
 <table align="center">

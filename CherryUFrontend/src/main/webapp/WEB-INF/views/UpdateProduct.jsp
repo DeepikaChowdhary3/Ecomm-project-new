@@ -10,6 +10,7 @@
 <title>CherryU|Update Product</title>
 </head>
 <body bgcolor="#FFDAB9">
+<br><br><br>
 <h3 align="center">Update Product Page</h3>
 <form:form action="updateProduct" modelAttribute="product" methos="post">
 <table align="center">

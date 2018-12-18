@@ -145,7 +145,8 @@ img {
 </style>
 </head>
 <body background="<c:url value="/resources/images/bg9.jpg"/>">
-<form action="<c:url value="/addtocart/${product.productId}"/>" method="get" >	
+<br><br><br>
+<form action="<c:url value="/addtocart/${product.productId}"/>" method="post" >	
 
 <div class="container">
 <div class="card">

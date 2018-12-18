@@ -25,6 +25,7 @@ background-size:cover;
 </style>
 </head>
 <body background="<c:url value="/resources/images/bg1.jpg"/>">
+<br><br><br>
 <div class="container">
 <h4 align="center">
 <i><b>Products</b></i>&nbsp;&nbsp;

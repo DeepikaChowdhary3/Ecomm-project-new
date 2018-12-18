@@ -23,7 +23,7 @@ color:#FA8072;
 </head>
 
 <body background="<c:url value="/resources/images/bg9.jpg"/>">
-
+<br><br><br>
 <div class="container">
 <h3 align="center"><b>Category Page</b></h3><br>
 <form  action="<c:url value="/addCategory"/>" method="post">

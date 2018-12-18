@@ -26,10 +26,10 @@ public class CartController {
 	ProductDAO productDAO;
 	
 	@RequestMapping(value="/cart")
-	public String showCart(Model model)
+	public String showCart(HttpSession session,Model model)
 	{
-		String userId="Deep";
-		List<Cart> Cartlist=cartDAO.Cartlist(userId);
+		String username=(String)session.getAttribute("username");
+		List<Cart> Cartlist=cartDAO.Cartlist(username);
 		model.addAttribute("Cartlist",Cartlist);
 		model.addAttribute("totalAmount",this.calculateTotalAmount(Cartlist));
 		
@@ -37,13 +37,14 @@ public class CartController {
 	}
 	
 	@RequestMapping(value="/addtocart/{productId}")
-	public String addToCart(@PathVariable("productId")int productId,@RequestParam("quantity")int quantity,Model model)
+	public String addToCart(@PathVariable("productId")int productId,@RequestParam("quantity")int quantity,HttpSession session,Model model)
 	{
-		Cart cart=new Cart();
-		String userId="Deep";
+		
+		String username=(String)session.getAttribute("username");
 		Product product=productDAO.getProduct(productId);
-		cart.setCartId(9005);
-		cart.setUserId(userId);
+		Cart cart=new Cart();
+		
+		cart.setUsername(username);
 		cart.setProductId(productId);
 		cart.setProductName(product.getProductName());
 		cart.setQuantity(quantity);
@@ -52,7 +53,7 @@ public class CartController {
 		
 		cartDAO.addOrderToCart(cart);
 		
-		List<Cart> Cartlist=cartDAO.Cartlist(userId);
+		List<Cart> Cartlist=cartDAO.Cartlist(username);
 		model.addAttribute("Cartlist",Cartlist);
 		model.addAttribute("totalAmount",this.calculateTotalAmount(Cartlist));
 		
@@ -63,12 +64,12 @@ public class CartController {
 	@RequestMapping(value="/updateCart/{cartId}")
 	public String updateCartDetails(@PathVariable("cartId")int cartId,@RequestParam("quantity")int quantity,HttpSession session,Model model)
 	{
-		String userId=(String)session.getAttribute("userId");
+		String username=(String)session.getAttribute("username");
 		Cart cart=cartDAO.getCartDetails(cartId);
 		cart.setQuantity(quantity);
 		cartDAO.updateOrderInCart(cart);
 		
-		List<Cart> Cartlist=cartDAO.Cartlist(userId);
+		List<Cart> Cartlist=cartDAO.Cartlist(username);
 		model.addAttribute("Cartlist",Cartlist);
 		model.addAttribute("totalAmount",this.calculateTotalAmount(Cartlist));
 		return "Cart";
@@ -77,11 +78,12 @@ public class CartController {
 	@RequestMapping(value="/deleteCart/{cartId}")
 	public String deleteCartDetails(@PathVariable("cartId")int cartId,@RequestParam("quantity")int quantity,HttpSession session,Model model)
 	{
-		String userId=(String)session.getAttribute("userId");
+		String username=(String)session.getAttribute("username");
 		Cart cart=cartDAO.getCartDetails(cartId);
+		cart.setQuantity(quantity);
 		cartDAO.removeOrderFromCart(cart);
 		
-		List<Cart> Cartlist=cartDAO.Cartlist(userId);
+		List<Cart> Cartlist=cartDAO.Cartlist(username);
 		model.addAttribute("Cartlist",Cartlist);
 		model.addAttribute("totalAmount",this.calculateTotalAmount(Cartlist));
 		return "Cart";

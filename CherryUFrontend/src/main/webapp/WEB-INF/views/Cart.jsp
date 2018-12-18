@@ -31,23 +31,18 @@ background-size:cover;
 
 </head>
 <body background="<c:url value="/resources/images/bg11.jpg"/>">
-
+<br><br><br>
 <div class="container">
 
 <div class="row">
 
 
-<div class="col-md-9 text-center">
+<div class="col-md-12 text-center">
 <br>
 <h5>&nbsp;&nbsp;<i class="fas fa-shopping-cart">&nbsp;&nbsp; Your Shopping Cart</i></h5>
 </div>
 
-<div class="col-md-3 text-right">
-<br>
-<button type="submit" class="btn btn-md btn-block btn-warning">
-<i class="fas fa-share-square">&nbsp;&nbsp; Continue shopping</i>
-</button>
-</div>
+
 
 </div>
 <br>
@@ -55,11 +50,13 @@ background-size:cover;
 
 
 <br>
-
 <b><strong>
-<div class="container text-center" style="background:#d3d3d3;color:black;font-weight:bold">
+
+<div class="container text-center" style="background-color:#d3d3d3;color:black">
+
 <c:forEach items="${Cartlist}" var="cart">
 <br>
+<form action="<c:url value="/updateCart/${cart.cartId}"/>" method="get">
 <div class="row ">
 
 
@@ -81,21 +78,28 @@ background-size:cover;
 </div>			
 <div class="col-lg-2">
 
-<button type="submit" class="btn btn-link btn-sm">
-<i class="fas fa-trash-alt"></i></button>
 
-<button type="submit" class="btn btn-link btn-sm">
-<i class="fas fa-edit"></i></button>
 
+<button type="submit" value="update" class="btn btn-success btn-sm">
+<i class="fas fa-edit">&nbsp;&nbsp;Update</i></button>
 
 </div>
 <br>
 
 </div>
 
-<br>
-<br>
-<br>
+</form>
+<div class="row text-center">
+
+<div class="col-md-11 text-left">&nbsp;&nbsp;&nbsp;
+<form action="<c:url value="/deleteCart/${cart.cartId}"/>" method="get">
+Quantity: <input type="number" value="${cart.quantity}" name="quantity" min="1" max="${cart.quantity}"> 
+<button type="submit" value="delete" class="btn btn-danger btn-sm">
+<i class="fas fa-trash-alt">&nbsp;&nbsp;Delete</i></button> </form>
+
+</div>
+</div>
+<br><br><br>
 </c:forEach>
 
 <br><br>
@@ -104,19 +108,28 @@ background-size:cover;
 </strong></b>
 
 
-<br><br>
+<br>
 <div class="container">
 <br>
 <div class="row">
 
-<div class="col-md-9 text-center">
+<div class="col-md-6 text-center">
 
 <h4><strong>Grand Amount: ${totalAmount}</strong></h4>
 </div>
+
+<div class="col-md-3">
+<a href="<c:url value="/viewProducts"/>">
+<button type="submit" class="btn btn-block btn-warning">
+<i class="fas fa-share-square">&nbsp;&nbsp; Continue shopping</i>
+</button></a>
+</div>
+
 <div class="col-md-3 text-right">
+<a href="<c:url value="/checkout"/>">
 <button type="submit" class="btn btn-success btn-block">
 Checkout
-</button>
+</button></a>
 </div>
 </div>
 <br>
