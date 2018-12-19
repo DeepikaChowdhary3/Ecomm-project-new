@@ -22,7 +22,8 @@ background-size:cover;
 </style>
 </head>
 <body background="<c:url value="/resources/images/bg1.jpg"/>">
-<br><br><br>
+<br>
+
 <div id="demo" class="carousel slide" data-ride="carousel">
   <ul class="carousel-indicators">
     <li data-target="#demo" data-slide-to="0" class="active"></li>

@@ -49,23 +49,25 @@ background-size:cover;
           <input class="form-control" placeholder="Password" name="password" id="password" type="password" required="">
         </div>
         <div>
-          <button type="submit" class="btn btn-primary btn-block">
+          <button type="submit" class="btn btn-danger btn-block">
            Submit
           </button>
           
-          
+          <br>
           <p class="help-block text-center">
-            <a class="pull-right text-muted" href="#" id="olvidado"><strong>Forgot your password?</strong></a>
+            <a class="pull-right text-dark" href="#" id="olvidado"><b>Forgot your password?</b></a>
           </p>
         </div>
- 
-  
-  </div>
   </form>
   <div>
-  <p class="help-block text-center">
-  Not a member ?<a href="signup"><button><strong>Sign Up</strong></button></a>
+  <p class="text-center">
+  <b>Not a member ?</b>&nbsp;&nbsp;<a href="signup"><button class="btn btn-danger">
+  <strong>Sign Up</strong></button></a>
   </div>
+  </p>
+  </div>
+  
+  
   
   <div style="display: none;" id="form-olvidado">
     <h4 class="">

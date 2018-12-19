@@ -21,7 +21,7 @@ background-size:cover;
 
 </head>
 <body background="<c:url value="/resources/images/bg1.jpg"/>">
-<br><br><br>
+<br><br><br><h2 align="center">Hello ${sessionScope.username}! Welcome to CherryU! Happy Shopping!</h2><br>
 <div id="demo" class="carousel slide" data-ride="carousel">
   <ul class="carousel-indicators">
     <li data-target="#demo" data-slide-to="0" class="active"></li>
