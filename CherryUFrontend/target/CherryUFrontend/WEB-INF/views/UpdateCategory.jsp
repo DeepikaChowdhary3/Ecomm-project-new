@@ -8,6 +8,7 @@
 <title>CherryU|Update Category</title>
 </head>
 <body bgcolor="#FFDAB9">
+<br><br><br>
 <h3 align="center">Update Category Page</h3>
 <form  action="<c:url value="/updateCategory"/>" method="post">
 <table align="center">

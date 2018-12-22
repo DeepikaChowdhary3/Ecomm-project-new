@@ -6,11 +6,34 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
 <title>CherryU|${product.productName}</title>
+<script>
+function getRating() {
+var number = ${product.rating};
+if(number *= 1 > 0  && number <=5) {
+show_image('yr', number);
+} else {
+alert("Enter valid rating, greater than 0");
+}
+}
+
+function show_image (id,number) {
+var x = number;
+var y = id;
+document.getElementById(y).innerHTML = '';
+for (var i =0; i<x; i++){
+var img = document.createElement("img");
+img.height=30;
+img.src = "http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/512/star-full-icon.png";
+document.getElementById(y).appendChild(img);
+}
+}
+</script>
 <style>
 body {
 	
@@ -77,16 +100,17 @@ img {
 
 
 
-.add-to-cart{
+.addtocart {
   background: black;
   padding: 1.2em 1.5em;
   border: none;
+  align:center;
   text-transform: UPPERCASE;
   font-weight: bold;
   color: #fa8072;
   -webkit-transition: background .3s ease;
           transition: background .3s ease; }
-  .add-to-cart:hover {
+  .addtocart:hover{
     background: #fa8072;
     color: black; }
 
@@ -121,8 +145,9 @@ img {
 </style>
 </head>
 <body background="<c:url value="/resources/images/bg9.jpg"/>">
+<br><br><br>
+<form action="<c:url value="/addtocart/${product.productId}"/>" method="post" >	
 
-<form action="/addtocart/${product.productId}" method="get">
 <div class="container">
 <div class="card">
 <div class="container-fliud">
@@ -137,7 +162,7 @@ img {
 <h3 class="product-title">${product.productName}</h3>
 <div class="rating">
 <div class="star">
-<span id="yr"></span><br/><span id="y"></span><br>
+<span id="yr"></span><br/><span id="y"></span>  <br>
 <button style="background-color:black;color:#fa8072" type="button" onclick="getRating()">
 <i class="fas fa-heart"></i>&nbsp;&nbsp;Click here for User Rating&nbsp;&nbsp;<i class="fas fa-heart"></i></button>
 </div>
@@ -149,13 +174,23 @@ img {
 <h4 class="stock"><b>Stock Available: <span>${product.stock}</span></b></h4>
 <p class="vote"><strong>91%</strong> of buyers enjoyed this product!</p>
 		
-						
+			
 <h5>Quantity: 
-<input id="quantity" value="1" type="number" class="quantity" min=1 max="${product.stock}" step=1 data-size="lg">
+
+		<select name="quantity" class="form-control btn-block">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			</select>
+		
 </h5>
-									
-<div class="action">
-<button class="add-to-cart btn btn-default" type="button"><i class="fas fa-shopping-cart">&nbsp;&nbsp;Add To Cart</i></button>
+		<br>						
+
+<div class="action" >
+<button type="submit" align="center" class="addtocart btn btn-default">Add To Cart</button>
+
 </div>
 </div>
 </div>
@@ -163,29 +198,7 @@ img {
 </div>
 </div>
 </form>
-
 	
-<script>
-function getRating() {
-var number = ${product.rating};
-if(number *= 1 > 0  && number <=5) {
-show_image('yr', number);
-} else {
-alert("Enter valid rating, greater than 0");
-}
-}
 
-function show_image (id,number) {
-var x = number;
-var y = id;
-document.getElementById(y).innerHTML = '';
-for (var i =0; i<x; i++){
-var img = document.createElement("img");
-img.height=30;
-img.src = "http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/512/star-full-icon.png";
-document.getElementById(y).appendChild(img);
-}
-}
-</script>
 </body>
 </html>

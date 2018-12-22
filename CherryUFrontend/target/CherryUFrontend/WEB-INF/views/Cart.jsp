@@ -6,98 +6,134 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
-<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
 <title>CherryU|Cart</title>
-</head>
-<body>
 
+<style>
+.container{
+background:black;
+color:#fa8072;
+font-family:'Times New Roman';
+font-weight:bold;
+
+}
+body{
+background-size:cover;
+}
+</style>
+
+
+
+
+</head>
+<body background="<c:url value="/resources/images/bg11.jpg"/>">
+<br><br><br>
 <div class="container">
-	<div class="row">
-		<div class="col-xs-8">
-			<div class="panel panel-info">
-				<div class="panel-heading justify-content-between">
-					<div class="panel-title">
-						<div class="row" >
-							<div class="col-xs-6">
-								<h5><i class="fas fa-shopping-cart">&nbsp;&nbsp; Your Shopping Cart</i></h5>
-							</div>
-							<div class="col-xs-6">
-								<button type="button" class="btn btn-primary btn-sm btn-block">
-									<i class="fas fa-share-square">&nbsp;&nbsp; Continue shopping</i>
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<c:forEach items="Cartlist" var="cart" >
-				<div class="panel-body">
-					<div class="row">
-						<div class="col-xs-2"><img src="<c:url value="/resources/images/${cart.productId}.jpg"/>">
-						</div>
-						<div class="col-xs-4">
-							<h4 class="product-name">${cart.productName}</h4>
-						</div>
-						<div class="col-xs-6">
-							<div class="col-xs-3 text-right">
-								<h6><strong>${cart.price}<span class="text-muted">x</span></strong></h6>
-							</div>
-							<div class="col-xs-3">
-								<h6>Quantity: ${cart.quantity}</h6>
-							</div>
-							<div class="col-xs-4">
-								<h6>Total: {cart.quantity}*{cart.price}</h6>
-							</div>
-							
-							<div class="col-xs-2">
-								<button type="button" class="btn btn-link btn-xs">
-									<i class="fas fa-trash-alt"></i>
-								</button>
-							</div>
-						</div>
-					</div>
-					
-					<hr>
-					
-				</c:forEach>
-					
-					<div class="row">
-						<div class="text-center">
-							<div class="col-xs-9">
-								<h6 class="text-right">Added items?</h6>
-							</div>
-							<div class="col-xs-3">
-				
-								<button type="button" class="btn btn-default btn-sm btn-block">
-									Update cart
-								</button>
-								
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="panel-footer">
-					<div class="row text-center">
-						<div class="col-xs-9">
-							<h4 class="text-right">Grand Amount: ${totalAmount}</h4>
-						</div>
-						<div class="col-xs-3">
-							<button type="button" class="btn btn-success btn-block">
-								Checkout
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
+<div class="row">
+
+
+<div class="col-md-12 text-center">
+<br>
+<h5>&nbsp;&nbsp;<i class="fas fa-shopping-cart">&nbsp;&nbsp; Your Shopping Cart</i></h5>
 </div>
 
+
+
+</div>
+<br>
+</div>
+
+
+<br>
+<b><strong>
+
+<div class="container text-center" style="background-color:#d3d3d3;color:black">
+
+<c:forEach items="${Cartlist}" var="cart">
+<br>
+<form action="<c:url value="/updateCart/${cart.cartId}"/>" method="get">
+<div class="row ">
+
+
+<div class="col-sm-2"><img src="<c:url value="/resources/images/${cart.productId}.jpg"/>" width="150" height="150">
+</div>
+
+<div class="col-sm-3">
+<h4 class="product-name">&nbsp;&nbsp;${cart.productName}</h4>
+<b>Price: ${cart.price}</b>
+</div>
+
+<div class="col-md-5">
+
+<b>${cart.price} <span class="text-muted">x</span></b>
+<b>Quantity : <input type="text" value="${cart.quantity}" name="quantity" min="1" max="10" size="1"></b>
+
+<h5>Total: ${cart.quantity * cart.price}</h5>
+
+</div>			
+<div class="col-lg-2">
+
+
+
+<button type="submit" value="update" class="btn btn-success btn-sm">
+<i class="fas fa-edit">&nbsp;&nbsp;Update</i></button>
+
+</div>
+<br>
+
+</div>
+
+</form>
+<div class="row text-center">
+
+<div class="col-md-11 text-left">&nbsp;&nbsp;&nbsp;
+<form action="<c:url value="/deleteCart/${cart.cartId}"/>" method="get">
+Quantity: <input type="number" value="${cart.quantity}" name="quantity" min="1" max="${cart.quantity}"> 
+<button type="submit" value="delete" class="btn btn-danger btn-sm">
+<i class="fas fa-trash-alt">&nbsp;&nbsp;Delete</i></button> </form>
+
+</div>
+</div>
+<br><br><br>
+</c:forEach>
+
+<br><br>
+</div>
+
+</strong></b>
+
+
+<br>
+<div class="container">
+<br>
+<div class="row">
+
+<div class="col-md-6 text-center">
+
+<h4><strong>Grand Amount: ${totalAmount}</strong></h4>
+</div>
+
+<div class="col-md-3">
+<a href="<c:url value="/viewProducts"/>">
+<button type="submit" class="btn btn-block btn-warning">
+<i class="fas fa-share-square">&nbsp;&nbsp; Continue shopping</i>
+</button></a>
+</div>
+
+<div class="col-md-3 text-right">
+<a href="<c:url value="/checkout"/>">
+<button type="submit" class="btn btn-success btn-block">
+Checkout
+</button></a>
+</div>
+</div>
+<br>
+
+</div>
 </body>
 </html>
