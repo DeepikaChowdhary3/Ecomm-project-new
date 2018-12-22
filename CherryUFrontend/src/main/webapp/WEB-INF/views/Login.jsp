@@ -59,14 +59,12 @@ background-size:cover;
           </p>
         </div>
   </form>
-  <div>
+  </div>
+  <div class="container">
   <p class="text-center">
   <b>Not a member ?</b>&nbsp;&nbsp;<a href="signup"><button class="btn btn-danger">
-  <strong>Sign Up</strong></button></a>
+  <strong>Sign Up</strong></button></a></p>
   </div>
-  </p>
-  </div>
-  
   
   
   <div style="display: none;" id="form-olvidado">

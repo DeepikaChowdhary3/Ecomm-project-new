@@ -15,7 +15,7 @@
 <style>
 body{
 background-size:cover;
-font:'Times New Roman';
+font-family:Times New Roman;
 }
 
 </style>
