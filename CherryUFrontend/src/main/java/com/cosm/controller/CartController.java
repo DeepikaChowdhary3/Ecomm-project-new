@@ -103,6 +103,14 @@ public class CartController {
 		return totalAmount;
 		}
 		
-	
+	@RequestMapping(value="/checkout")
+	public String checkout(HttpSession session,Model model)
+	{
+		String username=(String)session.getAttribute("username");
+		List<Cart> Cartlist=cartDAO.Cartlist(username);
+		model.addAttribute("Cartlist",Cartlist);
+		model.addAttribute("totalAmount",this.calculateTotalAmount(Cartlist));
+		return "ConfirmOrder";
+	}
 }
 
