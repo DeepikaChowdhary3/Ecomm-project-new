@@ -145,7 +145,7 @@ img {
 </style>
 </head>
 <body background="<c:url value="/resources/images/bg9.jpg"/>">
-<br><br><br>
+<br>
 <form action="<c:url value="/addtocart/${product.productId}"/>" method="post" >	
 
 <div class="container">
@@ -202,3 +202,4 @@ img {
 
 </body>
 </html>
+<%@include file="Footer.jsp" %>

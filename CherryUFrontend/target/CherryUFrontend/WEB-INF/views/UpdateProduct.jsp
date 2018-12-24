@@ -12,7 +12,7 @@
 <body bgcolor="#FFDAB9">
 <br><br><br>
 <h3 align="center">Update Product Page</h3>
-<form:form action="updateProduct" modelAttribute="product" methos="post">
+<form:form action="updateProduct" modelAttribute="product" method="post">
 <table align="center">
 
 <tr>
@@ -30,3 +30,4 @@
 </form:form>
 </body>
 </html>
+<%@include file="Footer.jsp" %>

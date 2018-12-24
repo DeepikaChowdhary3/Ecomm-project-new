@@ -46,22 +46,25 @@ background-size:cover;
           <span class="input-group-addon">
             <i class="fas fa-lock"></i>
            </span>&nbsp;&nbsp;
-          <input class="form-control" placeholder="Password" name="password" id="password" type="password" value="" required="">
+          <input class="form-control" placeholder="Password" name="password" id="password" type="password" required="">
         </div>
         <div>
-          <button type="submit" class="btn btn-primary btn-block">
+          <button type="submit" class="btn btn-danger btn-block">
            Submit
           </button>
           
-          
+          <br>
           <p class="help-block text-center">
-            <a class="pull-right text-muted" href="#" id="olvidado"><strong>Forgot your password?</strong></a>
+            <a class="pull-right text-dark" href="#" id="olvidado"><b>Forgot your password?</b></a>
           </p>
         </div>
- 
-  
-  </div>
   </form>
+  </div>
+  <div class="container">
+  <p class="text-center">
+  <b>Not a member ?</b>&nbsp;&nbsp;<a href="signup"><button class="btn btn-danger">
+  <strong>Sign Up</strong></button></a></p>
+  </div>
   
   
   <div style="display: none;" id="form-olvidado">
@@ -109,3 +112,4 @@ $(document).ready(function() {
 
 </body>
 </html>
+<%@include file="Footer.jsp" %>
