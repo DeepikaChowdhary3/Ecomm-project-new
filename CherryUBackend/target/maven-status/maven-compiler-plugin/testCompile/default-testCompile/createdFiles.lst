@@ -1,4 +1,5 @@
 com\cosm\CherryUBackend\AppTest.class
+com\cosm\test\OrderDetailsDAOTestCase.class
 com\cosm\test\ProductDAOTestCase.class
 com\cosm\test\DemoTest.class
 com\cosm\test\CartDAOTestCase.class

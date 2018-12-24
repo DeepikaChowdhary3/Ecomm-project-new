@@ -18,6 +18,8 @@ import com.cosm.dao.CartDAO;
 import com.cosm.dao.CartDAOImpl;
 import com.cosm.dao.CategoryDAO;
 import com.cosm.dao.CategoryDAOImpl;
+import com.cosm.dao.OrderDetailsDAO;
+import com.cosm.dao.OrderDetailsDAOImpl;
 import com.cosm.dao.ProductDAO;
 import com.cosm.dao.ProductDAOImpl;
 import com.cosm.dao.SupplierDAO;
@@ -26,6 +28,7 @@ import com.cosm.dao.UserDAO;
 import com.cosm.dao.UserDAOImpl;
 import com.cosm.model.Cart;
 import com.cosm.model.Category;
+import com.cosm.model.OrderDetails;
 import com.cosm.model.Product;
 import com.cosm.model.Supplier;
 import com.cosm.model.User;
@@ -61,7 +64,7 @@ public class DBConfig {
 		factory.addProperties(hibernateProp);
 		
 		factory.addAnnotatedClass(Cart.class);
-		
+		factory.addAnnotatedClass(OrderDetails.class);
 		factory.addAnnotatedClass(Category.class);
 		factory.addAnnotatedClass(Product.class);
 		factory.addAnnotatedClass(Supplier.class);
@@ -110,6 +113,13 @@ public class DBConfig {
 	public UserDAO getUserDAO()
 	{
 		return new UserDAOImpl();
+	}
+	
+	@Autowired(required = true)
+	@Bean(name="orderDetailsDAO")
+	public OrderDetailsDAO getOrderDetailsDAO()
+	{
+		return new OrderDetailsDAOImpl();
 	}
 	
 }

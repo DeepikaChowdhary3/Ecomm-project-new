@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: com.cosm.test.CartDAOTestCase
+Test set: com.cosm.test.OrderDetailsDAOTestCase
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 4, Time elapsed: 0.187 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.156 sec
