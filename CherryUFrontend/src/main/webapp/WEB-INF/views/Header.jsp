@@ -29,7 +29,7 @@ background-color:black;
 
 <img src="<c:url value="/resources/images/logo.png"/>" style="width:50;px">
 
-<a class="nav-link" href="home" style="color:#FA8072;font-size:18"><i class="fas fa-home">&nbsp;&nbsp;Home</i></a> 
+<a class="nav-link" href="home" style="color:#FA8072;font-size:18"><b>CherryU</b>&nbsp;&nbsp;<i class="fas fa-home">&nbsp;&nbsp;Home</i></a> 
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="background-color:#fa8072;color:black">
     <span class="fas fa-align-justify"></span>
   </button>

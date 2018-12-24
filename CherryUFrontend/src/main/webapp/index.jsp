@@ -10,10 +10,12 @@
 </head>
 <body>
 <br><br><br>
-<h1 align="center"><b>Welcome to CherryU website !</b></h1>
-<h3 align="center"><b>Login to see our precious products! Not a member? Sign up with us and enjoy shopping!</b></h3>
-
+<p>
+<h1 align="center" style="color:white"><b>Welcome to CherryU website !</b></h1>
+<h3 align="center" style="color:white"><b>Login to see our precious products! Not a member? Sign up with us and enjoy shopping!</b></h3>
+</p>
 <%@include file="/WEB-INF/views/Carousal.jsp" %>
 
 </body>
 </html>
+<%@include file="/WEB-INF/views/Footer.jsp" %>

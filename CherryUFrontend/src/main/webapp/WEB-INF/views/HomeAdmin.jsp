@@ -29,3 +29,4 @@ font-family:Times New Roman;
 </div>
 </body>
 </html>
+<%@include file="Footer.jsp" %>

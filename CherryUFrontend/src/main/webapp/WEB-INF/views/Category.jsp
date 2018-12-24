@@ -69,3 +69,4 @@ color:#FA8072;
 </div>
 </body>
 </html>
+<%@include file="Footer.jsp" %>

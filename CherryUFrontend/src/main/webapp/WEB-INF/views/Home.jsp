@@ -20,7 +20,7 @@ background-size:cover;
 </style>
 
 </head>
-<body background="<c:url value="/resources/images/bg1.jpg"/>">
+<body background="<c:url value="/resources/images/homebg.jpg"/>">
 <br><br><br>
 <div id="demo" class="carousel slide" data-ride="carousel">
   <ul class="carousel-indicators">
@@ -32,24 +32,24 @@ background-size:cover;
   </ul>
   <div class="carousel-inner text-center">
     <div class="carousel-item active">
-      <img src="<c:url value="/resources/images/logo.png"/>" alt="Welcome" width="1100" height="600">
+      <img src="<c:url value="/resources/images/logo.png"/>" alt="Welcome" width="1000" height="500">
         
     </div>
     <div class="carousel-item">
-      <img src="<c:url value="/resources/images/Titan-home.jpg"/>" alt="Skinn by titan" width="1100" height="600">
+      <img src="<c:url value="/resources/images/Titan-home.jpg"/>" alt="Skinn by titan" width="1000" height="500">
      
        
     </div>
     <div class="carousel-item">
-      <img src="<c:url value="/resources/images/bg7.jpg"/>" alt="New York" width="1100" height="600">
+      <img src="<c:url value="/resources/images/bg7.jpg"/>" alt="New York" width="1000" height="500">
         
     </div>
     <div class="carousel-item">
-      <img src="<c:url value="/resources/images/Makeup-Home.png"/>" alt="New York" width="1100" height="600">
+      <img src="<c:url value="/resources/images/Makeup-Home.png"/>" alt="New York" width="1000" height="500">
         
     </div>
     <div class="carousel-item">
-      <img src="<c:url value="/resources/images/Nyx-home.png"/>" alt="New York" width="1100" height="600">
+      <img src="<c:url value="/resources/images/Nyx-home.png"/>" alt="New York" width="1000" height="500">
         
     </div>
   </div>
@@ -62,3 +62,4 @@ background-size:cover;
 </div>
 </body>
 </html>
+<%@include file="Footer.jsp" %>

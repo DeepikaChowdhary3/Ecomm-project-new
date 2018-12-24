@@ -112,3 +112,4 @@ $(document).ready(function() {
 
 </body>
 </html>
+<%@include file="Footer.jsp" %>

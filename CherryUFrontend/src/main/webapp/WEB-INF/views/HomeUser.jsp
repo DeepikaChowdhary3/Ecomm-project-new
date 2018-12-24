@@ -62,3 +62,4 @@ background-size:cover;
 </div>
 </body>
 </html>
+<%@include file="Footer.jsp" %>
