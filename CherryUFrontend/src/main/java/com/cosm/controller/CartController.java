@@ -76,11 +76,11 @@ public class CartController {
 	}
 	
 	@RequestMapping(value="/deleteCart/{cartId}")
-	public String deleteCartDetails(@PathVariable("cartId")int cartId,@RequestParam("quantity")int quantity,HttpSession session,Model model)
+	public String deleteCartDetails(@PathVariable("cartId")int cartId,HttpSession session,Model model)
 	{
 		String username=(String)session.getAttribute("username");
 		Cart cart=cartDAO.getCartDetails(cartId);
-		cart.setQuantity(quantity);
+		
 		cartDAO.removeOrderFromCart(cart);
 		
 		List<Cart> Cartlist=cartDAO.Cartlist(username);

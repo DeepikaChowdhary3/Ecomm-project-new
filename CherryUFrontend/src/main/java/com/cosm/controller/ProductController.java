@@ -105,8 +105,26 @@ String path="C:\\chow\\CherryU\\CherryUFrontend\\src\\main\\webapp\\resources\\i
 		model.addAttribute("Supplierslist",this.getSupplierslist(supplierDAO.Supplierslist()));
 		model.addAttribute("RatingsList",this.getRatingsList());
 		
+		return "UpdateProduct";
+	}
+	
+	@RequestMapping(value="/updateProduct",method=RequestMethod.POST)
+	public String updateProduct(@PathVariable("productId")int productId,Model model,@ModelAttribute("product")Product product)
+	{
+		
+		Product product1=productDAO.getProduct(productId);
+		model.addAttribute("product",product1);
+		model.addAttribute("Categorieslist",this.getCategorieslist(categoryDAO.Categorieslist()));
+		model.addAttribute("Supplierslist",this.getSupplierslist(supplierDAO.Supplierslist()));
+		model.addAttribute("RatingsList",this.getRatingsList());
+		
+		productDAO.updateProduct(product);
+		
+		List<Product> listProducts=productDAO.Productslist();
+		model.addAttribute("productList",listProducts);
 		return "Product";
 	}
+	
 	
 	@RequestMapping(value="/deleteProduct/{productId}")
 	public String deleteProductDeatils(@PathVariable("productId")int productId,Model model)
@@ -159,6 +177,7 @@ String path="C:\\chow\\CherryU\\CherryUFrontend\\src\\main\\webapp\\resources\\i
 	{
 		List<Product> Productslist=productDAO.Productslist();
 		model.addAttribute("Productslist",Productslist);
+		model.addAttribute("Categorieslist",this.getCategorieslist(categoryDAO.Categorieslist()));
 		return "ViewProducts";
 	}
 	
