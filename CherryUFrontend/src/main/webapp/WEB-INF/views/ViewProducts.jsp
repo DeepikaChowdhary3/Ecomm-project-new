@@ -28,7 +28,7 @@ opacity:1;
 <body background="<c:url value="/resources/images/productsbg.jpg"/>">
 <br><br><br>
 <div class="container">
-<h4 align="center">
+<h4 align="center" style="color:#fa8072">
 <i><b>Products</b></i>&nbsp;&nbsp;
 <br><br>
 </h4>
@@ -37,6 +37,7 @@ opacity:1;
 <c:forEach items="${Productslist}" var="product">
     <div class="col-lg-4 col-sm-4 col-6">
       <a href="chosenproduct/${product.productId}" class="d-block mb-4 h-100">
+     
             <img class="img-fluid img-thumbnail" src="<c:url value="/resources/images/${product.productId}.jpg"/>">
             <p align="center" style="background-color:black;color:#FA8072">
             <b>Product: ${product.productName}<br>
@@ -47,6 +48,7 @@ opacity:1;
 </div></c:forEach></div>
 
 </div>
+<br><br><br>
 </body>
 </html>
 <%@include file="Footer.jsp" %>

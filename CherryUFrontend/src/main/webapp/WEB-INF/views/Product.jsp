@@ -17,14 +17,14 @@ background-size:cover;
 }
 h3{
 background-color:black;
-color:#FA8072;
+
 }
 </style>
 </head>
 <body background="<c:url value="/resources/images/bg3.png"/>">
 <br><br><br>
 <div class="container">
-<h3 align="center"><b>Product Page</b></h3>
+<h3 align="center" style="color:#fa8072"><b>Product Page</b></h3>
 <br>
 <form:form action="addProduct" modelAttribute="product" method="post" enctype="multipart/form-data">
 <table class="table table-dark">
@@ -109,6 +109,7 @@ color:#FA8072;
 </c:forEach>
 </table>
 </div>
+<br><br><br>
 </body>
 </html>
 <%@include file="Footer.jsp" %>

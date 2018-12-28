@@ -22,6 +22,7 @@ background-size:cover;
 </head>
 <body background="<c:url value="/resources/images/homebg.jpg"/>">
 <br><br><br>
+<h3 align="center">Welcome to CherryU!</h3>
 <div id="demo" class="carousel slide" data-ride="carousel">
   <ul class="carousel-indicators">
     <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -60,6 +61,8 @@ background-size:cover;
     <span class="carousel-control-next-icon" style="color:black;"></span>
   </a>
 </div>
+<br>
+<br>
 </body>
 </html>
 <%@include file="Footer.jsp" %>

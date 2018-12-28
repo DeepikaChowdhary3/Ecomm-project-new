@@ -16,7 +16,7 @@ background-size:cover;
 }
 h3{
 background-color:black;
-color:#FA8072;
+
 }
 </style>
 </head>
@@ -24,7 +24,7 @@ color:#FA8072;
 <body  background="<c:url value="/resources/images/bg11.jpg"/>">
 <br><br><br>
 <div class="container">
-<h3 align="center"><b>Supplier Page</b></h3><br>
+<h3 align="center" style="color:#fa8072"><b>Supplier Page</b></h3><br>
 <form  action="<c:url value="/addSupplier"/>" method="post">
 
 <table class="table table-dark">

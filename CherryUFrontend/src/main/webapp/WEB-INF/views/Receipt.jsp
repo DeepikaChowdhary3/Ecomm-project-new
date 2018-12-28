@@ -97,7 +97,7 @@ font-weight:bold;
     
     <tr>
     <td colspan="4">Grand Amount</td>
-    <td>Rs. ${totalAmount}</td>
+    <td>Rs. ${orderDetails.grandAmount}</td>
     </tr>
     
     <tr>
@@ -107,7 +107,7 @@ font-weight:bold;
   </table>
 </div>
 </div>
-
+<br><br><br>
 </body>
 </html>
 <%@include file="Footer.jsp" %>

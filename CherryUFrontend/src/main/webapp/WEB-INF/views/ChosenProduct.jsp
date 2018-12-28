@@ -199,7 +199,7 @@ img {
 </div>
 </form>
 	
-
+<br><br><br>
 </body>
 </html>
 <%@include file="Footer.jsp" %>

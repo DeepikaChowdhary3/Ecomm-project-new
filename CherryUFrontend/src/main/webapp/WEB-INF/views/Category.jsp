@@ -17,7 +17,7 @@ background-size:cover;
 }
 h3{
 background-color:black;
-color:#FA8072;
+
 }
 </style>
 </head>
@@ -25,7 +25,7 @@ color:#FA8072;
 <body background="<c:url value="/resources/images/bg9.jpg"/>">
 <br><br><br>
 <div class="container">
-<h3 align="center"><b>Category Page</b></h3><br>
+<h3 align="center" style="color:#fa8072"><b>Category Page</b></h3><br>
 <form  action="<c:url value="/addCategory"/>" method="post">
 <table class="table table-dark">
 <tr>
@@ -67,6 +67,8 @@ color:#FA8072;
 </c:forEach>
 </table>
 </div>
+<br>
+<br><br>
 </body>
 </html>
 <%@include file="Footer.jsp" %>

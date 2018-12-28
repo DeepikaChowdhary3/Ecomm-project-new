@@ -93,8 +93,8 @@ background-size:cover;
 
 <div class="col-md-11 text-left">&nbsp;&nbsp;&nbsp;
 <form action="<c:url value="/deleteCart/${cart.cartId}"/>" method="get">
-Quantity: <input type="number" value="${cart.quantity}" name="quantity" min="1" max="${cart.quantity}"> 
-<button type="submit" value="delete" class="btn btn-danger btn-sm">
+
+<button type="submit" class="btn btn-danger btn-sm">
 <i class="fas fa-trash-alt">&nbsp;&nbsp;Delete</i></button> </form>
 
 </div>
@@ -135,6 +135,7 @@ Checkout
 <br>
 
 </div>
+<br><br><br>
 </body>
 </html>
 <%@include file="Footer.jsp" %>
