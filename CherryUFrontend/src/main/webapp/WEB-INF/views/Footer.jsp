@@ -15,7 +15,7 @@
 </head>
 <body bgcolor="black">
 <nav class="navbar navbar-expand-md fixed-bottom">
-<h6 style="text-align:right;color:#fa8072">@ Copyright 2018. All Rights Reserved</h6>
+<h6 style="text-align:right;color:#fa8072">&copy; Copyright 2018. All Rights Reserved</h6>
 </nav>
 </body>
 </html>

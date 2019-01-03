@@ -71,6 +71,9 @@ background-color:black;
       <li class="nav-item">
         <a class="nav-link" href="product" style="color:#FA8072"><b>Organize Product</b></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="viewProducts" style="color:#FA8072"><b>Products</b></a>
+      </li> 
 </ul>
 <ul class="nav navbar-nav navbar-right"> 
 <li class="nav-item">

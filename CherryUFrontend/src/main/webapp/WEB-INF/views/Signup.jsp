@@ -108,7 +108,7 @@ body{
 			
 		<tr>
 		<td colspan="2" align="center">	
-		 <input type="submit" value="Register" style="background-color:green;color:black">
+		 <input type="submit" value="Register" >
 		 </td>
 		 </tr>
 		
