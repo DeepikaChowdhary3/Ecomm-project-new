@@ -145,6 +145,7 @@ img {
 </style>
 </head>
 <body background="<c:url value="/resources/images/bg9.jpg"/>">
+
 <br>
 <form action="<c:url value="/addtocart/${product.productId}"/>" method="post" >	
 
@@ -171,18 +172,40 @@ img {
 <h5><p>191 users loved this product!</p></h5>
 <h5><p class="product-description">${product.productDesc}</p></h5>
 <h4 class="price"><b>Current Price:  INR <span>${product.price}</span></b></h4>
-<h4 class="stock"><b>Stock Available: <span>${product.stock}</span></b></h4>
+
+
+
+<h4 class="stock"><b>Stock Available: <%-- <span>${product.stock}</span> --%></b></h4>
+
+<c:set value="${product.stock}" var="stock"></c:set>
+		<c:if test="${stock==0}">
+			<h4><b>Sorry! Currently this product is out of stock!</b></h4>
+		</c:if>
+		<c:if test="${stock>0}">
+			<h4><b>${product.stock}</b></h4>
+		</c:if>
+
+
 <p class="vote"><strong>91%</strong> of buyers enjoyed this product!</p>
 		
 			
 <h5>Quantity: 
-
-		<select name="quantity" class="form-control btn-block">
+<%-- <input type="text" value=1 min=1 max="${product.stock}"/> --%>
+		
+		<!-- <select name="quantity" class="form-control btn-block">
 			<option value="1">1</option>
 			<option value="2">2</option>
 			<option value="3">3</option>
 			<option value="4">4</option>
 			<option value="5">5</option>
+			</select> -->
+			
+			
+			<select id="selectedQuantity" name="quantity">
+			<option value="0">-----Select-----</option>
+			<c:forEach items="${quantityValues}" var="quantity">
+				<option value="${quantity.key}">${quantity.value}</option>
+			</c:forEach>
 			</select>
 		
 </h5>
