@@ -57,6 +57,13 @@ public class CartController {
 		model.addAttribute("Cartlist",Cartlist);
 		model.addAttribute("totalAmount",this.calculateTotalAmount(Cartlist));
 		
+		
+		if(product.getStock()>0)
+			product.setStock((product.getStock()-quantity));
+		else
+			product.setStock(0);
+		productDAO.updateProduct(product);
+		
 		return "Cart";
 		
 	}
@@ -72,6 +79,12 @@ public class CartController {
 		List<Cart> Cartlist=cartDAO.Cartlist(username);
 		model.addAttribute("Cartlist",Cartlist);
 		model.addAttribute("totalAmount",this.calculateTotalAmount(Cartlist));
+		Product product=productDAO.getProduct(cart.getProductId());
+		if(product.getStock()>0)
+			product.setStock((product.getStock()-quantity+1));
+		else
+			product.setStock(0);
+		productDAO.updateProduct(product);
 		return "Cart";
 	}
 	
@@ -86,6 +99,13 @@ public class CartController {
 		List<Cart> Cartlist=cartDAO.Cartlist(username);
 		model.addAttribute("Cartlist",Cartlist);
 		model.addAttribute("totalAmount",this.calculateTotalAmount(Cartlist));
+		
+		Product product=productDAO.getProduct(cart.getProductId());
+		if(product.getStock()>0)
+			product.setStock((product.getStock()+cart.getQuantity()));
+		else
+			product.setStock(0);
+		productDAO.updateProduct(product);
 		return "Cart";
 		
 	}
@@ -110,6 +130,8 @@ public class CartController {
 		List<Cart> Cartlist=cartDAO.Cartlist(username);
 		model.addAttribute("Cartlist",Cartlist);
 		model.addAttribute("totalAmount",this.calculateTotalAmount(Cartlist));
+		
+		
 		return "ConfirmOrder";
 	}
 }

@@ -186,6 +186,11 @@ String path="C:\\chow\\CherryU\\CherryUFrontend\\src\\main\\webapp\\resources\\i
 	{
 		Product product=productDAO.getProduct(productId);
 		model.addAttribute("product", product);
+		LinkedHashMap<Integer,Integer> quantityMap = new LinkedHashMap<Integer,Integer>();
+		for(int i=1;i<=product.getStock();i++)
+			quantityMap.put(i,i);
+		model.addAttribute("quantityValues", quantityMap);
+		
 		return "ChosenProduct";
 	}
 }
